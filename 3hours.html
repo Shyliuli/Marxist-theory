@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马克思主义基本原理 - 考试急救指南</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .motivation {
+            background: linear-gradient(135deg, #ff9a56, #ffad56);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 15px 30px rgba(255, 154, 86, 0.3);
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-tab {
+            padding: 15px 30px;
+            margin: 0 5px;
+            background: transparent;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #667eea;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            padding-left: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .principle-item {
+            background: linear-gradient(135deg, #f8f9ff, #f0f2ff);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .principle-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .core-principle {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            color: #2d3436;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .golden-quote {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .golden-quote:before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        .template-step {
+            background: linear-gradient(135deg, #e17055, #d63031);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .template-step:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .template-examples {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .final-tips {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .tip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tip-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            color: #2d3436;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-tab {
+                padding: 12px 20px;
+                margin: 0;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .tip-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap icon"></i>马克思主义基本原理</h1>
+            <p class="subtitle">考试急救指南 - 三小时冲刺版</p>
+        </header>
+
+        <div class="motivation">
+            <i class="fas fa-fire icon"></i>
+            <strong>别慌！</strong>三个小时足够你把最核心的知识点和答题框架再过一遍，稳住心态，你准备得比想象中要好。
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('part1')">
+                <i class="fas fa-brain"></i> 核心原理
+            </button>
+            <button class="nav-tab" onclick="showSection('part2')">
+                <i class="fas fa-tools"></i> 答题模板
+            </button>
+            <button class="nav-tab" onclick="showSection('tips')">
+                <i class="fas fa-lightbulb"></i> 考前贴士
+            </button>
+        </div>
+
+        <div id="part1" class="content-section active">
+            <div class="section-card">
+                <h2><i class="fas fa-star icon" style="color: #f39c12;"></i>"临阵磨枪"核心必背原理（金句版）</h2>
+                
+                <h3><i class="fas fa-atom"></i> 唯物论 & 辩证法 (哲学部分)</h3>
+                
+                <div class="principle-item">
+                    <h4><i class="fas fa-brain" style="color: #667eea;"></i>物质与意识 (考AI、量子力学等科技问题)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>物质决定意识，意识是物质的反映，意识对物质具有能动的反作用。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>世界的本原是物质的，物质不依赖于人的意识而客观存在。科技新发现（如量子纠缠）恰恰证明了物质世界的客观性、复杂性和可知性，深化了我们对物质的认识，<span class="highlight">证实而非推翻</span>了马克思主义物质观。人工智能是<span class="highlight">人脑意识的产物和延伸</span>，是意识能动性的体现，但它不具备人类的社会性和创造性，不能取代人脑。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-hands" style="color: #e17055;"></i>实践与认识 (考"图样"与"建筑房屋"等比喻)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>实践是认识的基础（来源、动力、目的、检验标准），认识对实践有反作用（正确认识促进，错误认识阻碍）。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>实践决定认识，认识依赖于实践。一切真知都来源于实践，又要回到实践中去接受检验并指导实践。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-balance-scale" style="color: #00b894;"></i>矛盾的普遍性与特殊性 (考"中国式现代化"、"因地制宜"等)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>矛盾普遍性（共性）与特殊性（个性）相互联结、辩证统一。共性寓于个性之中，个性离不开共性。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>坚持<span class="highlight">普遍原理（共性）</span>与<span class="highlight">具体国情（个性）</span>相结合，是中国革命、建设和改革成功的根本经验。<span class="highlight">中国式现代化</span>既有各国现代化的<span class="highlight">共同特征（共性）</span>，更有基于自己国情的<span class="highlight">中国特色（个性）</span>。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-network-wired" style="color: #6c5ce7;"></i>联系与发展 (考"系统观念"、"创新"等)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>事物是普遍联系、永恒发展的。要用联系、发展、全面的观点看问题，反对孤立、静止、片面的形而上学。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong><span class="highlight">系统观念</span>是普遍联系观点的体现，要求我们统筹兼顾、综合施策。<span class="highlight">创新</span>是辩证否定观的要求，是"扬弃"，是发展的动力。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-search" style="color: #fd79a8;"></i>真理的绝对性与相对性 (考"坚持和发展马克思主义")</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>真理是绝对性和相对性的统一。任何真理都包含着不容否定的客观内容（绝对性），但又是在一定条件下对客观世界的近似正确反映（相对性）。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>马克思主义是<span class="highlight">科学真理（绝对性）</span>，所以必须长期坚持；但它又需要随着实践的发展而不断发展（相对性），所以必须与时俱进，<span class="highlight">反对教条主义和相对主义</span>。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-heart" style="color: #e84393;"></i>价值与真理 (考"哲学社会科学"的作用)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>实践是真理尺度和价值尺度的统一。成功的实践，既要遵循客观规律（真理尺度），又要满足主体需要（价值尺度）。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>哲学社会科学研究既要追求<span class="highlight">科学性（真理）</span>，揭示客观规律；又要体现<span class="highlight">价值性（价值）</span>，回答时代课题，服务人民需要。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-unlock" style="color: #00cec9;"></i>自由与必然 (考"改造世界"、"规律"等)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>自由是对必然的认识和对客观世界的改造。必然指不以人意志为转移的客观规律。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>认识规律（必然）是获得自由的前提，利用规律改造世界才是真正的自由。世界上没有绝对的自由，只有在认识和遵循客观规律基础上的自由。
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-users"></i> 历史唯物主义</h3>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-mountain" style="color: #fdcb6e;"></i>社会存在与社会意识 (考"脱贫攻坚精神"等精神力量)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>社会存在决定社会意识，社会意识对社会存在具有能动的反作用。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong><span class="highlight">先进的社会意识（如脱贫攻坚精神）</span>对社会发展起积极的推动作用，可以转化为强大的物质力量。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-crown" style="color: #e17055;"></i>人民群众是历史创造者 (考"江山就是人民")</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>人民群众是历史的主体，是物质财富和精神财富的创造者，是社会变革的决定力量。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>"江山就是人民，人民就是江山"深刻体现了人民群众是历史创造者的唯物史观，强调了党的根本宗旨和执政根基。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-industry" style="color: #74b9ff;"></i>生产方式是决定力量 (考根本动力)</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>生产方式（生产力+生产关系）是社会发展的决定性力量。生产力决定生产关系，经济基础决定上层建筑。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>科技是第一生产力，是推动社会进步的革命性力量。
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-chart-line"></i> 政治经济学 & 科学社会主义</h3>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-shopping-cart" style="color: #a29bfe;"></i>商品二因素与劳动二重性 (考"商品拜物教")</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>商品具有使用价值和价值二因素，由生产商品的具体劳动和抽象劳动二重性决定。商品经济中，人与人的关系被物与物的关系掩盖。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>商品的"神秘性"不在于其使用价值，而在于其价值形式掩盖了生产者之间社会关系。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-dollar-sign" style="color: #fd79a8;"></i>资本与剩余价值 (考"资本的本质")</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>资本的本质是能够带来剩余价值的价值。剩余价值是雇佣工人创造的、被资本家无偿占有的、超过劳动力价值的价值。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>"资本来到世间，从头到脚都滴着血和肮脏的东西"指的是资本原始积累的血腥暴力过程。资本主义剥削的秘密在于剩余价值的生产。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-exclamation-triangle" style="color: #e17055;"></i>资本主义基本矛盾 (考"经济危机")</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>生产社会化与生产资料资本主义私人占有之间的矛盾。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>经济危机是资本主义基本矛盾的集中体现，其本质是生产相对过剩。
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <h4><i class="fas fa-arrow-up" style="color: #00b894;"></i>资本主义新变化与历史必然性</h4>
+                    <div class="core-principle">
+                        <strong>核心原理：</strong>当代资本主义的新变化（如国家垄断、福利制度）是其自我调节，但<span class="highlight">没有改变其根本矛盾和剥削本质</span>。
+                    </div>
+                    <div class="golden-quote">
+                        <strong>金句：</strong>社会主义代替资本主义是历史发展的必然趋势，但这将是一个长期、曲折、复杂的历史过程。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="part2" class="content-section">
+            <div class="section-card">
+                <h2><i class="fas fa-tools icon" style="color: #e17055;"></i>万能答题模板与思路</h2>
+                
+                <p style="font-size: 1.1rem; margin-bottom: 25px; text-align: center; font-weight: 500;">
+                    遇到任何分析论述题，都按照<span class="highlight">"三步走"</span>结构来回答，保证条理清晰，踩点给分。
+                </p>
+
+                <h3><i class="fas fa-route"></i> "是什么 - 为什么 - 怎么办"三步法</h3>
+
+                <div class="template-step">
+                    <div class="step-number">1</div>
+                    <h4 style="color: white; margin-bottom: 15px;"><i class="fas fa-question-circle"></i>第一步：原理阐述 (是什么？)</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i><strong>开门见山，亮出观点/原理。</strong> 直接说出题目考的是哪个哲学/政治经济学原理。</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i><strong>抄书/背诵原理内容。</strong> 准确、简洁地解释这个原理的定义、内涵、基本内容。</li>
+                    </ul>
+                    <div class="template-examples">
+                        <strong>模板句式：</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>"这体现了马克思主义关于……的原理。"</li>
+                            <li>"……原理是马克思主义哲学的核心内容，它指的是……"</li>
+                            <li>"该原理的基本内涵包括：第一……第二……第三……"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="template-step">
+                    <div class="step-number">2</div>
+                    <h4 style="color: white; margin-bottom: 15px;"><i class="fas fa-search"></i>第二步：结合材料，分析论证 (为什么？)</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i><strong>连接原理与材料。</strong> 将抽象的原理与题目给出的具体材料（如霍金的话、二十大报告、科技成就等）挂钩。</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i><strong>分析材料如何体现原理。</strong> 逐句或分点解析材料，说明材料中的每一部分是如何印证你第一步所说原理的。这是得分关键，展示你的分析能力。</li>
+                    </ul>
+                    <div class="template-examples">
+                        <strong>模板句式：</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>"材料中提到的'……'现象，正是……原理的生动体现。"</li>
+                            <li>"具体来说，材料中的A方面说明了原理的a观点；B方面印证了原理的b观点。"</li>
+                            <li>"正如霍金所担心的……，这恰恰反映了意识的能动作用。而人工智能的发展离不开物质载体，又说明了物质决定意识。"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="template-step">
+                    <div class="step-number">3</div>
+                    <h4 style="color: white; margin-bottom: 15px;"><i class="fas fa-lightbulb"></i>第三步：总结升华，指导实践 (怎么办？)</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i><strong>总结观点，重申意义。</strong> 简要概括前面的分析，强调理解该原理的重要性。</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i><strong>提出对策或启示。</strong> 结合新时代背景，说明该原理对我们国家发展、个人成长有什么指导意义。拔高到国家方针政策、青年责任等。</li>
+                    </ul>
+                    <div class="template-examples">
+                        <strong>模板句式：</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>"因此，上述原理对于我们正确认识……具有重要的理论和现实意义。"</li>
+                            <li>"在全面建设社会主义现代化国家的新征程上，我们必须坚持……，做到……"</li>
+                            <li>"作为新时代青年，我们应当运用……的科学世界观和方法论，来指导我们的学习和实践，为实现中华民族伟大复兴贡献力量。"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tips" class="content-section">
+            <div class="final-tips">
+                <h2 style="color: white; text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-trophy icon"></i>考前最后叮嘱
+                </h2>
+                
+                <div class="tip-grid">
+                    <div class="tip-item">
+                        <h4><i class="fas fa-pen-fancy" style="color: #ffeaa7;"></i>卷面整洁！</h4>
+                        <p>字可以不好看，但一定要工整，分点论述，让老师一眼看到你的逻辑层次（一、二、三；1、2、3；①②③）。</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4><i class="fas fa-bullseye" style="color: #fd79a8;"></i>关键词踩点！</h4>
+                        <p>把上面"金句版"的黑体字尽量写上去，这是得分点。</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4><i class="fas fa-edit" style="color: #74b9ff;"></i>别留白！</h4>
+                        <p>就算想不起来完美的表述，也要用自己的话把三步法框架填满。只要方向对，就有基本分。</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4><i class="fas fa-eye" style="color: #55efc4;"></i>看清题目！</h4>
+                        <p>是让你谈"认识"，还是"意义"，还是"怎么做"，问什么答什么。</p>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 25px; margin-top: 30px; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 15px;">
+                        <i class="fas fa-heart" style="color: #ff7675;"></i> 最后的话
+                    </h3>
+                    <p style="font-size: 1.2rem; font-weight: 500; line-height: 1.8;">
+                        深呼吸，你已经复习了很多遍，现在要做的就是相信自己，把脑子里的东西清晰地写在卷子上。
+                        <br><br>
+                        <span style="font-size: 1.4rem; color: #ffeaa7;">
+                            <i class="fas fa-star"></i> 祝你考试顺利，金榜题名！ <i class="fas fa-star"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        function showSection(sectionId) {
+            // 隐藏所有内容区域
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 移除所有标签的active类
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // 显示选中的内容区域
+            document.getElementById(sectionId).classList.add('active');
+
+            // 为对应的标签添加active类
+            event.target.classList.add('active');
+        }
+
+        // 滚动进度条
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+
+            // 显示/隐藏回到顶部按钮
+            const scrollButton = document.getElementById('scrollToTop');
+            if (winScroll > 300) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // 平滑滚动动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.section-card, .principle-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
